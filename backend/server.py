@@ -1,8 +1,8 @@
 from flask import Flask, request, jsonify
-#from flask_cors import CORS 
+from flask_cors import CORS 
 from Chatbot.Chatbot import chatbotFunction
 app=Flask(__name__)
-#CORS(app)
+CORS(app)
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
     data = request.get_json()
@@ -19,4 +19,4 @@ def chatbot():
     return jsonify({'response': response})
 
 if __name__ == "__main__":
-    app.run(host='https://medicalchatbotwebsite.onrender.com', port=5000, debug=True)
+    app.run(host="0.0.0.0", port=5000, debug=True)
