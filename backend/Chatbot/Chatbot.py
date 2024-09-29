@@ -12,7 +12,7 @@ from langchain_google_genai import GoogleGenerativeAIEmbeddings
 load_dotenv()
 genai.configure(api_key=os.environ["APIKEY"])
 
-PDF_PATH = "./myDataEnglish.pdf"
+PDF_PATH = os.getcwd() + "\\Chatbot\\mydataEnglish.pdf"
 
 #! preprocessing text from pdf
 def get_pdf_text(pdf_path):
