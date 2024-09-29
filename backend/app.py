@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 #from flask_cors import CORS 
 from Chatbot.Chatbot import chatbotFunction
-app=Flask(__name__)
+app = Flask(__name__)
 #CORS(app)
 @app.route("/chatbot", methods=["POST"])
 def chatbot():
