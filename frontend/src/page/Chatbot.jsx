@@ -22,7 +22,7 @@ const Chatbot = () => {
     setLoading(true);
 
     try {
-      const res = await fetch('https://medicalchatbotwebsite.onrender.com/chatbot', {
+      const res = await fetch('https://medicalchatbotwebsite-1.onrender.com/chatbot', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
