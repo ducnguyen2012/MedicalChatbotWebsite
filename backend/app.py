@@ -3,7 +3,7 @@ from flask import Flask, request, jsonify
 from Chatbot.Chatbot import chatbotFunction
 app = Flask(__name__)
 #CORS(app)
-@app.route("/chatbot", methods=["POST"])
+@app.route("/chatbot", methods=["POST", "GET"])
 def chatbot():
     data = request.get_json()
     if data is None:
