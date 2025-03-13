@@ -1,0 +1,27 @@
+from flask import Flask, request, jsonify
+
+from Chatbot.Chatbot import chatbotFunction
+app = Flask(__name__)
+'''
+when deploy comment 2 lines below!
+'''
+from flask_cors import CORS 
+CORS(app)
+@app.route("/chatbot", methods=["POST", "GET"])
+def chatbot():
+    data = request.get_json()
+    if data is None:
+        print("Can not find data!")
+    else:
+        print("This is my data: ", str(data))
+    message = data.get('message', '') # lay message value in input
+    botResponse = chatbotFunction(message)
+    response = f"{botResponse}"
+    print("This is my message: ",message)
+    print("This is bot message: ",botResponse)
+    
+    #! response se duoc bat boi fetch
+    return jsonify({'response': response})
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=10000, debug=True)
